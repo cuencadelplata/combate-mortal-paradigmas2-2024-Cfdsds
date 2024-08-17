@@ -27,4 +27,11 @@ public class Militar {
     public void setAtaque(int ataque) {
         this.ataque = ataque;
     }
+
+    public void disparar( Militar objetivo) {
+    
+        int dañoInfligido = this.ataque;
+
+        objetivo.vida -= dañoInfligido;
+    }
 }
