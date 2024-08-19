@@ -34,4 +34,8 @@ public class Militar {
 
         objetivo.vida -= dañoInfligido;
     }
+
+    public boolean estaVivo() {
+        return vida > 0;
+    }
 }
