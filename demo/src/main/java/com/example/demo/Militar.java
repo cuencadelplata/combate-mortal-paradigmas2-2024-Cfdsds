@@ -36,6 +36,6 @@ public class Militar {
     }
 
     public boolean estaVivo() {
-        return vida > 0;
+        return this.vida > 0;
     }
 }

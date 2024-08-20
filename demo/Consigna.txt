@@ -1,0 +1,10 @@
+1. Se requiere tener Soldados, Tanques, Buques  HECHO
+2. Todos pueden disparar. HECHO
+3. Todos pueden recibir un disparo  HECHO
+4. El soldado muere de un solo disparo  HECHO
+5. El tanque queda sin vida en 2 disparos HECHO
+6. El buque queda sin vida en 3 disparos    HECHO
+7. Todos deberían poder preguntar si esta vivo. HECHO
+8. Se requiere poder armar un Escudo y pasarlo a un item (sea Soldado, Tanque o Buque)
+9. El escudo puede tener un porcentaje que  disminuye el daño 
+(Si el escudo tiene un 50%, entonces el daño hace solo el 50% cuando se recibe)

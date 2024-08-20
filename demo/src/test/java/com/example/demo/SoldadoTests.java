@@ -31,6 +31,6 @@ public class SoldadoTests {
     @Test
     public void soldadoVivo() {
         Soldado s1 = new Soldado(2, 2);
-        assert(estaVivo(s1) == true);
+        assert(s1.estaVivo() == true);
     }
 }
