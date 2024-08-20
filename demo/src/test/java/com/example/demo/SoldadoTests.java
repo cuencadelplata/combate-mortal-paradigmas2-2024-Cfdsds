@@ -33,4 +33,22 @@ public class SoldadoTests {
         Soldado s1 = new Soldado(2, 2);
         assert(s1.estaVivo() == true);
     }
+
+    @Test
+    public void soldadoRecibeEscudo() {
+        Soldado s1 = new Soldado(2, 2);
+        Escudo e1 = new Escudo(50.0f,1);
+        s1.setEscudo(e1);
+        assert(s1.tieneEscudo() == true);
+    }
+
+    @Test
+    public void soldadoRecibeEscudoYUnDisparo() {
+        Soldado s1 = new Soldado(2, 2);
+        Soldado s2 = new Soldado(2, 2);
+        Escudo e1 = new Escudo(50.0f,1);
+        s1.setEscudo(e1);
+        s2.disparar(s1);
+        assert(s1.getVida() == 1);
+    }
 }
