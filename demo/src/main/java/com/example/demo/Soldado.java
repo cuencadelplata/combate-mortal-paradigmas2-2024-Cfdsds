@@ -6,7 +6,4 @@ public class Soldado extends Militar {
         super(vida, ataque);
     }
 
-   
-
-    
 }

@@ -30,19 +30,19 @@ public class Militar {
     }
 
     public void disparar( Militar objetivo) {
-        double dañoBase = this.ataque;
-        if (objetivo.escudo != null && objetivo.escudo.activo) {
-            
-            double dañoReducido = dañoBase * ( objetivo.escudo.defensa/100);
-            objetivo.vida -= dañoReducido;
-            objetivo.escudo.resistencia--;
-            if (objetivo.escudo.resistencia <= 0) {
-                objetivo.escudo.activo = false;
+            double dañoBase = this.ataque;
+            if (objetivo.escudo != null && objetivo.escudo.activo) {
+                
+                double dañoReducido = dañoBase * ( objetivo.escudo.defensa/100);
+                objetivo.vida -= dañoReducido;
+                objetivo.escudo.resistencia--;
+                if (objetivo.escudo.resistencia <= 0) {
+                    objetivo.escudo.activo = false;
+                }
+            } else {
+                // Aplicar el daño completo
+                objetivo.vida -= dañoBase;
             }
-        } else {
-            // Aplicar el daño completo
-            objetivo.vida -= dañoBase;
-        }
     }
 
     public boolean estaVivo() {
