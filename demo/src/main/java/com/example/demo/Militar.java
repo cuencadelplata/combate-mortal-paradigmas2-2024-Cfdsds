@@ -1,27 +1,27 @@
 package com.example.demo;
 
 public class Militar {
-    int vida;
+    double vida;
     int ataque;
     Escudo escudo;
 
     public Militar() {
     }
 
-    public Militar(int vida, int ataque) {
+    public Militar(double  vida, int ataque) {
         this.vida = vida;
         this.ataque = ataque;
     }
 
-    public int getVida() {
+    public double  getVida() {
         return vida;
     }
 
-    public void setVida(int vida) {
+    public void setVida(double  vida) {
         this.vida = vida;
     }
 
-    public int getAtaque() {
+    public float getAtaque() {
         return ataque;
     }
 
@@ -30,10 +30,10 @@ public class Militar {
     }
 
     public void disparar( Militar objetivo) {
-        float dañoBase = this.ataque;
+        double dañoBase = this.ataque;
         if (objetivo.escudo != null && objetivo.escudo.activo) {
             
-            float dañoReducido = dañoBase * (1 - objetivo.escudo.defensa);
+            double dañoReducido = dañoBase * ( objetivo.escudo.defensa/100);
             objetivo.vida -= dañoReducido;
             objetivo.escudo.resistencia--;
             if (objetivo.escudo.resistencia <= 0) {

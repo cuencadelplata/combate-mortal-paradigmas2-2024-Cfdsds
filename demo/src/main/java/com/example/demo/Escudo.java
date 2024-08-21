@@ -2,16 +2,29 @@ package com.example.demo;
 
 public class Escudo {
     public boolean activo;
-    public float defensa;
+    public double defensa;
     public int resistencia;
 
-    public Escudo(float defensa, int resistencia) {
+    public Escudo(double defensa, int resistencia) {
         this.activo = true;
-        this.defensa = 0;
-        this.resistencia = 0;
+        this.defensa = defensa;
+        this.resistencia = resistencia;
     }
 
-    public Escudo() {
+    public void setDefensa(double  defensa) {
+        this.defensa = defensa;
+    }
+
+    public void setResistencia(int resistencia) {
+        this.resistencia = resistencia;
+    }
+
+    public double getDefensa() {
+        return this.defensa;
+    }
+
+    public int getResistencia() {
+        return this.resistencia;
     }
 
 }

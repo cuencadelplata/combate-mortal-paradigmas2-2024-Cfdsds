@@ -37,16 +37,18 @@ public class SoldadoTests {
     @Test
     public void soldadoRecibeEscudo() {
         Soldado s1 = new Soldado(2, 2);
-        Escudo e1 = new Escudo(50.0f,1);
+        Escudo e1 = new Escudo(50f,1);
         s1.setEscudo(e1);
         assert(s1.tieneEscudo() == true);
+        assert (e1.getDefensa() == 50f);
+        assert (e1.getResistencia() == 1);
     }
 
     @Test
     public void soldadoRecibeEscudoYUnDisparo() {
         Soldado s1 = new Soldado(2, 2);
         Soldado s2 = new Soldado(2, 2);
-        Escudo e1 = new Escudo(50.0f,1);
+        Escudo e1 = new Escudo(50,1);
         s1.setEscudo(e1);
         s2.disparar(s1);
         assert(s1.getVida() == 1);

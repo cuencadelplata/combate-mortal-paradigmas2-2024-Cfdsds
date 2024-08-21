@@ -34,4 +34,22 @@ public class TanqueTests {
         assert(t2.getVida() == 0);
         assert(t2.estaVivo() == false);
     }
+
+    @Test
+    void tanqueRecibeEscudo() {
+        Tanque t1 = new Tanque(6, 3);
+        Escudo e1 = new Escudo(50,1);
+        t1.setEscudo(e1);
+        assert(t1.tieneEscudo() == true);
+    }
+
+    @Test
+    void tanqueRecibeEscudoYUnDisparo() {
+        Tanque t1 = new Tanque(6, 3);
+        Tanque t2 = new Tanque(6, 3);
+        Escudo e1 = new Escudo(50,1);
+        t1.setEscudo(e1);
+        t2.disparar(t1);
+        assert(t1.getVida() == 4.5);
+    }
 }
