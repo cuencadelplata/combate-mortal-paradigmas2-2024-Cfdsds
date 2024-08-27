@@ -1,12 +1,10 @@
 package com.example.demo;
 
 public class Escudo {
-    public boolean activo;
     public double defensa;
     public int resistencia;
 
     public Escudo(double defensa, int resistencia) {
-        this.activo = true;
         this.defensa = defensa;
         this.resistencia = resistencia;
     }

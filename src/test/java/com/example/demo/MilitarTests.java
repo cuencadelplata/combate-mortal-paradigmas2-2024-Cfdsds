@@ -19,19 +19,14 @@ public class MilitarTests {
         assert(m2.getVida() == 8);
     }
 
-
     @Test
-    public void crearTanque() {
-        Tanque t1 = new Tanque(0, 0);
-        assert(t1.getAtaque() == 0);
-        assert(t1.getVida() == 0);
+    public void soldadoDisparaAChuckNorris() {
+        Soldado s1 = new Soldado(2, 2);
+        ChuckNorris c1 = new ChuckNorris(999,999);
+        s1.disparar(c1);
+        //con esta linea funciona
+        //c1.recibirDisparo(s1);
+        //no se por que anda con 997
+        assert(c1.getVida() == 999);
     }
-
-    @Test
-    public void crearBuque() {
-        Buque b1 = new Buque(0, 0);
-        assert(b1.getAtaque() == 0);
-        assert(b1.getVida() == 0);
-    }
-
 }

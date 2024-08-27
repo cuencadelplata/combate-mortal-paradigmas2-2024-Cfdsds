@@ -24,8 +24,7 @@ public class SoldadoTests {
         Soldado s1 = new Soldado(2, 2);
         Soldado s2 = new Soldado(2, 2);
         s1.disparar(s2);
-        s2.disparar(s1);
-        assert(s1.getVida() == 0);
+        assert(s2.getVida() == 0);
     }
 
     @Test
@@ -37,10 +36,9 @@ public class SoldadoTests {
     @Test
     public void soldadoRecibeEscudo() {
         Soldado s1 = new Soldado(2, 2);
-        Escudo e1 = new Escudo(50f,1);
+        Escudo e1 = new Escudo(50,1);
         s1.setEscudo(e1);
-        assert(s1.tieneEscudo() == true);
-        assert (e1.getDefensa() == 50f);
+        assert (e1.getDefensa() == 50);
         assert (e1.getResistencia() == 1);
     }
 
@@ -52,5 +50,13 @@ public class SoldadoTests {
         s1.setEscudo(e1);
         s2.disparar(s1);
         assert(s1.getVida() == 1);
+    }
+
+    @Test
+    public void soldadoDisparaAChuckNorris() {
+        Soldado s1 = new Soldado(2, 2);
+        ChuckNorris c1 = new ChuckNorris(999,999);
+        s1.disparar(c1);
+        assert(c1.getVida() == 999);
     }
 }

@@ -29,21 +29,20 @@ public class Militar {
         this.ataque = ataque;
     }
 
-    public void disparar( Militar objetivo) {
-            double dañoBase = this.ataque;
-            if (objetivo.escudo != null && objetivo.escudo.activo) {
-                
-                double dañoReducido = dañoBase * ( objetivo.escudo.defensa/100);
-                objetivo.vida -= dañoReducido;
-                objetivo.escudo.resistencia--;
-                if (objetivo.escudo.resistencia <= 0) {
-                    objetivo.escudo.activo = false;
-                }
-            } else {
-                // Aplicar el daño completo
-                objetivo.vida -= dañoBase;
-            }
+
+    public void disparar(Militar objetivo) {
+        double danoBase = this.ataque;
+        double danoReducido = danoBase * (1 - (objetivo.escudo != null ? objetivo.escudo.defensa/100 : 0));
+        objetivo.recibirDisparo(danoReducido);
     }
+
+    public void recibirDisparo(double dano) {
+        this.vida -= dano;
+        if (escudo != null) {
+            escudo.resistencia--;
+        }
+    }
+
 
     public boolean estaVivo() {
         return this.vida > 0;
